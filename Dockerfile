@@ -12,7 +12,7 @@ RUN npm run build
 FROM nginx:alpine
 
 # Copy build files from the builder stage
-COPY --from=builder /build /usr/share/nginx/html
+COPY --from=builder dist /usr/share/nginx/html
 
 # Copy custom nginx configuration if needed
 # COPY nginx.conf /etc/nginx/nginx.conf
